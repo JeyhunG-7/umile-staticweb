@@ -44,9 +44,6 @@ const ContactUs = React.forwardRef((props, ref) => {
         message: {
             presence: {
                 allowEmpty: false
-            },
-            format: {
-                pattern: "[a-zA-Z ]+"
             }
         }
     };
