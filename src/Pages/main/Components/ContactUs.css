@@ -20,6 +20,7 @@
     color: #3A4554;
     opacity: 0.9;
     letter-spacing: -0.015em;
+    user-select: none;
 }
 
 .div-contact-us p{
@@ -30,6 +31,7 @@
     color: #76879D;
     line-height: 28px;
     letter-spacing: 0.015em;
+    user-select: none;
 }
 
 .div-contact-us img{
