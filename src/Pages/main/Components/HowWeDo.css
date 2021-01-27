@@ -24,6 +24,7 @@
     color: #3A4554;
     letter-spacing: 0.015em;
     opacity: 0.9;
+    user-select: none;
 }
 
 .how-we-do-div .steps{
@@ -47,6 +48,7 @@
     align-items: center;
     grid-row-gap: 20px;
     grid-template-rows: auto;
+    user-select: none;
 }
 
 .steps .hdr{

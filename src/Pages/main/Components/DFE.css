@@ -9,6 +9,7 @@
 
 .div-dfe h3{
     margin-bottom: 50px;
+    user-select: none;
 }
 
 .div-dfe{
@@ -46,7 +47,7 @@
 }
 
 .dfe-body .lottie img{
-    height: 250px; 
+    height: 215px; 
     width: auto; 
     display: flex; 
     margin: auto;
@@ -58,6 +59,7 @@
     width: 100%;
     grid-row-gap: 15px;
     grid-template-rows: auto;
+    user-select: none;
 }
 
 .dfe-desc .learn-more{

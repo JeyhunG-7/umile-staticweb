@@ -36,6 +36,7 @@
     color: #3A4554;
     opacity: 0.9;
     letter-spacing: -0.015em;
+    user-select: none;
 }
 
 .intro-text p{
@@ -44,6 +45,7 @@
     color: #76879D;
     line-height: 1.55em;
     letter-spacing: 0.015em;
+    user-select: none;
 }
 
 .intro-lottie{

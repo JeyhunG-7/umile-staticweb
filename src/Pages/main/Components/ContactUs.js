@@ -50,6 +50,8 @@ async function sendEmail(full_name, email, message){
 }
 
 const ContactUs = React.forwardRef((props, ref) => {
+    const screenX = window.screen.width;
+
     const name = useRef(null);
     const email = useRef(null);
     const message = useRef(null);
@@ -246,7 +248,7 @@ const ContactUs = React.forwardRef((props, ref) => {
                             <textarea data-autoresize
                                 className="textarea"
                                 maxLength="160"
-                                rows="1"
+                                rows={screenX > 600 ? '3': '1'}
                                 placeholder="Message"
                                 ref={message}
                                 onPaste={handleOnKeyPress}
