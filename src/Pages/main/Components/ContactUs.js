@@ -6,6 +6,49 @@ import DynamicIcon from '../../../Components/Helpers/DynamicIcon';
 
 import Icon from '../../../Images/main-contact-us.png';
 
+async function sendEmail(full_name, email, message){
+    var opts = {
+        personalizations: [
+            {
+            to: [
+                {
+                email: 'admin@umile.xyz',
+                name: 'Umile Form'
+                }
+            ],
+            dynamic_template_data: {
+                name: full_name,
+                email: email,
+                message: message
+            }
+            }
+        ],
+        from: {
+            email: 'noreply@umile.xyz'
+        },
+        template_id: 'd-363ff442979f4312b75f6ebc7494472f'
+    }
+
+    var api_key = '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'
+
+    try{
+        var response = await fetch('https://api.sendgrid.com/v3/mail/send', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `Bearer ${api_key}`
+            },
+            body: opts
+        })
+        
+        console.log(response);
+        return true;
+    } catch(err){
+        console.error(`Error while sending reset password email, ${JSON.stringify(err)}`);
+        return false;
+    }
+}
+
 const ContactUs = React.forwardRef((props, ref) => {
     const name = useRef(null);
     const email = useRef(null);
@@ -68,20 +111,22 @@ const ContactUs = React.forwardRef((props, ref) => {
 
         if (!check) {
             try {
-                var rawData = await fetch('http://localhost:8080/api/contact/getintouch', {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        email: email.current.value,
-                        name: name.current.value,
-                        message: message.current.value
-                    })
-                });
-                var response = await rawData.json();
-                if (response.success) {
+                // var rawData = await fetch('http://localhost:8080/api/contact/getintouch', {
+                //     method: 'POST',
+                //     headers: {
+                //         'Accept': 'application/json',
+                //         'Content-Type': 'application/json'
+                //     },
+                //     body: JSON.stringify({
+                //         email: email.current.value,
+                //         name: name.current.value,
+                //         message: message.current.value
+                //     })
+                // });
+                // var response = await rawData.json();
+
+                var result = await sendEmail(name.current.value, email.current.value, message.current.value);
+                if (result) {
                     setLoading(false);
                     setDoneLoading(true);
                     setTimeout(function () {
