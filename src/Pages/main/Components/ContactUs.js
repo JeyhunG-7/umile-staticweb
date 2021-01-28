@@ -5,6 +5,7 @@ import Validate from 'validate.js';
 import DynamicIcon from '../../../Components/Helpers/DynamicIcon';
 
 import Icon from '../../../Images/main-contact-us.png';
+import * as emailjs from 'emailjs-com'
 
 async function sendEmail(full_name, email, message){
     var opts = {
@@ -28,18 +29,20 @@ async function sendEmail(full_name, email, message){
         },
         template_id: 'd-363ff442979f4312b75f6ebc7494472f'
     }
-
-    var api_key = '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'
-
+    
     try{
-        var response = await fetch('https://api.sendgrid.com/v3/mail/send', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
-                'authorization': `Bearer ${api_key}`
-            },
-            body: opts
-        })
+        var templateParams = {
+            email: email,
+            name: full_name,
+            message: message
+        }
+
+        var response = await emailjs.send(
+            'service_2g9dgjh',
+            'template_11ed8yd',
+            templateParams,
+            'user_MX7koOzPUUf3e8VkzfDsw'
+        );
         
         console.log(response);
         return true;
