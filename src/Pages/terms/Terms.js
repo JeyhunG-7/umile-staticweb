@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import './Terms.css';
+import React from 'react';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import Fade from 'react-reveal/Fade';
-
+import './Terms.css';
 
 export default function Terms(props) {
 
