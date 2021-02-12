@@ -26,7 +26,8 @@ export default function Header(props) {
                                 ? <>
                                     <button className="sec-link-btn about" onClick={() => handleNavToSection('about')}>About</button>
                                     <button className="sec-link-btn" onClick={() => handleNavToSection('pricing')}>Pricing</button>
-                                    <button className="sec-link-btn" onClick={() => handleNavToSection('contact')}>Contact us</button>
+                                    <button className="sec-link-btn contact-us" onClick={() => handleNavToSection('contact')}>Contact us</button>
+                                    <a className="sec-link-btn sign-in" href="dashboard.umile.xyz/signin">Sign in</a>
                                 </>
                                 : <>
                                     <a href="/" className="page-link">Home</a>

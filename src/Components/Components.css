@@ -77,7 +77,8 @@
 
 @media only screen and (max-device-width: 600px) {
     /* Header */
-    .header .body-sub-2 .about{
+    .header .body-sub-2 .about,
+    .header .body-sub-2 .sign-in{
         display: none;
     }
 }
