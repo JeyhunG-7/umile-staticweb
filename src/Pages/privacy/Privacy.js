@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Privacy.css';
 import Header from '../../Components/Header';
 import Footer from '../../Components/Footer';
 import Fade from 'react-reveal/Fade';
-
 
 export default function Privacy(props) {
 

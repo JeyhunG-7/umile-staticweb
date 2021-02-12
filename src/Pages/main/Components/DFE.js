@@ -1,9 +1,9 @@
 import React from 'react';
-import './DFE.css';
 import Fade from 'react-reveal/Fade';
 import Shopify from '../../../Images/shopify_integration.png';
 import API from '../../../Images/api_integration.png';
 import EasyToUse from '../../../Images/dfe-easy-to-use.png';
+import './DFE.css';
 
 export default function DesignedForEveryone(props) {
 
@@ -21,7 +21,7 @@ export default function DesignedForEveryone(props) {
                             <div className="dfe-body-1a">
                                 <div className="dfe-body-1b">
                                     <div className="lottie">
-                                        <img slt="easy-to-use" src={EasyToUse} />
+                                        <img slt="easy-to-use" src={EasyToUse} alt="easy to use"/>
                                     </div>
                                     <div className="dfe-desc">
                                         <h4 className="dfe-desc-hdr">Easy-to-use platform</h4>
